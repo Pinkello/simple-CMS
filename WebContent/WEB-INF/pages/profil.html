@@ -1,0 +1,48 @@
+<section class="app-container">
+  <div class="app-container__box">
+  	<input type="button" class="itemButton" onclick="location.href='ServletHello?content=linksContent'" value="Strony" />
+  	<input type="button" class="itemButton" onclick="location.href='ServletHello?content=addLinkContent'" value="Dodaj stronê" />
+    <input type="button" class="itemButton" onclick="location.href='ServletHello?content=editLinkContent'" value="Edytuj stronê" />
+	<input type="button" class="itemButton" onclick="location.href='ServletHello?content=setColorContent'" value="Ustaw kolor" />
+  </div>
+<div class="app-container__content" id="profilContent" [[PROFIL_STYLE]]>
+	    <h2>[[profil]]</h2>
+	    <div id="profileImg" style="[[PROFILEIMG_STYLE]]">
+		    <form id="imgForm" action="./ServletHello" method="post" onchange="document.getElementById('imgForm').submit()">
+		    	<input type="hidden" name="content" value="profileImg" />
+		    	<input type="file" name="profileImg" class="custom-file-input" />
+		    </form>
+	    </div>
+	    <div id="data">
+	        <table id="userData">
+	            <tr>
+	                <td>Imiê: </td>
+	                <td id="firstNameValue">[[USER.FIRST_NAME]]</td>
+	            </tr>
+	            <tr>
+	                <td>Nazwisko: </td>
+	                <td id="lastNameValue">[[USER.LAST_NAME]]</td>
+	            </tr>
+	            <tr>
+	                <td>Email: </td>
+	                <td id="emailValue">[[USER.EMAIL]]</td>
+	            </tr>
+	        </table>
+	        <input type="button" class="itemButton button40"	 onclick="location.href='ServletHello?content=editContent'"value="EDYTUJ" />
+	    </div>
+</div>
+  <div class="app-container__box app-container__box--news rightBorder">
+    <div class="app-container__box__title">
+      
+    </div>
+    <div class="app-container__box__context">
+         Jesteœ zalogowany.<br><br>
+        Twój login: [[USER.LOGIN]]<br>
+        <input type="button" class="itemButton" onclick="location.href='ServletHello?content=profileContent'" value="Profil" />
+        <form action="./ServletHello" method="post">
+        	<input type="hidden" name="content" value="logoutContent">
+        	<input type="submit" value="Wylogowanie" class="itemButton">
+        </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="app-container">
+  <div class="app-container__box">
+    <input type="button" class="itemButton" onclick="location.href='ServletHello?content=linksContent'" value="Strony" />
+    <input type="button" class="itemButton" onclick="location.href='ServletHello?content=addLinkContent'" value="Dodaj stronê" />
+    <input type="button" class="itemButton" onclick="location.href='ServletHello?content=editLinkContent'" value="Edytuj stronê" />
+	<input type="button" class="itemButton" onclick="location.href='ServletHello?content=setColorContent'" value="Ustaw kolor" />
+  </div>
+<div class="app-container__content" [[LINKSEDIT_STYLE]]>
+    
+    [[edycjaStron]]
+    <form action="./ServletHello" method="post" id="linksForm">
+        <input type="hidden" name="content" value="editLinkContent">
+        <input type="hidden" name="editLinks" value="edit">
+        <table id="userData">
+        	[[LINKS_FORM]]
+	       </table>
+	       <input type="submit" value="Zatwierdz" class="itemButton button40">
+	    </form>
+	
+
+</div>
+  <div class="app-container__box app-container__box--news rightBorder">
+    <div class="app-container__box__title">
+ 
+    </div>
+    <div class="app-container__box__context">
+        Jesteœ zalogowany.<br><br>
+        Twój login: [[USER.LOGIN]]<br>
+        <input type="button" class="itemButton" onclick="location.href='ServletHello?content=profileContent'"
+		value="Profil" />
+        <form action="./ServletHello" method="post">
+        	<input type="hidden" name="content" value="logoutContent">
+        	<input type="submit" value="Wylogowanie" class="itemButton">
+        </form>
+    </div>
+  </div>
+</section>

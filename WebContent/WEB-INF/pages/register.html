@@ -1,0 +1,24 @@
+     
+        <section class="app-container">
+          
+        <div class="app-container__content" [[REGISTER_STYLE]]>
+            
+            <h2>[[rejestracja]]</h2>
+            <form action="./ServletHello" method="POST" id="registerForm">
+            	<input type="hidden" name="registerSubmit" value="register">
+            	<input type="hidden" name="content" value="registerContent">
+                <input type="text" placeholder="Imiê" name="firstName" id="firstName">
+                <input type="text" placeholder="Nazwisko" name="lastName" id="lastName">
+                <input type="text" placeholder="Login" name="login" id="login">
+                <input type="text" placeholder="Email" name="email" id="email">
+                <input type="password" placeholder="Has³o" name="password" id="password">
+
+                <input type="submit" value="Rejestruj" class="itemButton" ><br/>
+            </form>
+            <input type="button" class="itemButton button40" onclick="location.href='ServletHello?content=loginContent'"
+		value="Zaloguj" />
+            
+	
+        </div>
+         
+        </section>

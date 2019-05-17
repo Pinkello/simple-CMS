@@ -1,0 +1,53 @@
+<section class="app-container">
+  <div class="app-container__box">
+    <input type="button" class="itemButton" onclick="location.href='ServletHello?content=linksContent'" value="Strony" />
+  	<input type="button" class="itemButton" onclick="location.href='ServletHello?content=addLinkContent'" value="Dodaj stronê" />
+    <input type="button" class="itemButton" onclick="location.href='ServletHello?content=editLinkContent'" value="Edytuj stronê" />
+	<input type="button" class="itemButton" onclick="location.href='ServletHello?content=setColorContent'" value="Ustaw kolor" />
+  </div>
+<div class="app-container__content" [[EDITPROFIL_STYLE]]>
+    <h2>[[editProfil]]</h2>
+    
+    <div id="profileImg" style="[[PROFILEIMG_STYLE]]"></div>
+    <div id="data">
+        <form action="./ServletHello" method="post">
+        	<input type="hidden" name="content" value="editContent">
+        	<input type="hidden" name="editSubmit" value="edit">
+	       <table id="userData">
+	       	<tr>
+	               <td>Imiê: </td>
+	               <td id="firstNameValue"><input type="text" value="[[USER.FIRST_NAME]]" name="firstName"></td>
+	           </tr>
+	           <tr>
+	               <td>Nazwisko: </td>
+	               <td id="lastNameValue"><input type="text" value="[[USER.LAST_NAME]]" name="lastName"></td>
+	           </tr>
+	           <tr>
+	               <td>Email: </td>
+	               <td id="emailValue"><input type="text" value="[[USER.EMAIL]]" name="email"></td>
+	           </tr>
+	           <tr>
+	               <td>Has³o: </td>
+	               <td id="passwordValue"><input type="password" name="password"></td>
+	           </tr>
+	       </table>
+	       <input type="submit" value="Edytuj" id="profileBtn">
+        </form>
+    </div>
+</div>
+  <div class="app-container__box app-container__box--news rightBorder">
+    <div class="app-container__box__title">
+      <!-- <h2>ZALOGOWANY</h2> -->
+    </div>
+    <div class="app-container__box__context">
+        Jesteœ zalogowany.<br><br>
+        Twój login: [[USER.LOGIN]]<br>
+        <input type="button" class="itemButton" onclick="location.href='ServletHello?content=profileContent'"
+		value="Profil" />
+        <form action="./ServletHello" method="post">
+        	<input type="hidden" name="content" value="logoutContent">
+        	<input type="submit" value="Wylogowanie" class="itemButton">
+        </form>
+    </div>
+  </div>
+</section>

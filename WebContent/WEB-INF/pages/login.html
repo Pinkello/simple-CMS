@@ -1,0 +1,16 @@
+<section class="app-container">
+  
+<div class="app-container__content" [[LOGIN_STYLE]]>
+    
+    <h2>[[logowanie]]</h2>
+    <form action="./ServletHello" method="post" id="loginForm">
+    	<input type="hidden" name="content" value="loginContent">
+	    <input type="text" class="input60" placeholder="Login" name="login" id="login">
+	    <input type="password" class="input60" placeholder="Has³o" name="password" id="password">
+	    <input type="submit" value="Logowanie" class="itemButton"><br/>
+    </form>
+    <input type="button" class="itemButton button40" onclick="location.href='ServletHello?content=registerContent'"
+		value="Rejestracja" />
+</div>
+  
+</section>
